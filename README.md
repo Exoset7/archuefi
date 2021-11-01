@@ -1,32 +1,38 @@
-FFACI by eugene for Exo
-Fucking French Archlinux Custom Install
 
+# Fucking French Archlinux Custom Install UEFI - GPT
+
+FFACI by eugene for Exo
 Before continuing : read this example for prepare the disk
-he following partitions are required with gpt mode  ( use cfdisk tools for that)
+
+### The following partitions are required with gpt mode  ( use cfdisk tools for that)
+
               /dev/sdaXXXXXX1     150M       type :  EFI System
               /dev/sdaXXXXXX2     500G       type :  Linux FileSystem
 
- Format the partitions
- - mkfs.vfat /dev/sdaXXXXXX1
- - mkfs.ext4 /dev/sdaXXXXXX2
+ ### Format the partitions
+ 
+          $ mkfs.vfat /dev/sdaXXXXXX1 
+          $ mkfs.ext4 /dev/sdaXXXXXX2
 
  Mount the root partition file systems
- - mount /dev/sdaXXXXXX1 /mnt
+          $ mount /dev/sdaXXXXXX1 /mnt
  
  Create directory for boot/efi
- - mkdir -p /mnt/boot/efi
- - 
+ 
+          $ mkdir -p /mnt/boot/efi
+ 
  Mount the boot/efi partition
-- mount /dev/sdaXXXXXX2 /mnt/boot/efi
-- 
-- sudo pacman -Sy
+ 
+          $ mount /dev/sdaXXXXXX2 /mnt/boot/efi
 
-- sudo pacman -S git
+          $ sudo pacman -Sy
 
-- git clone https://github.com/Exoset7/archuefi.git
+          $ sudo pacman -S git
 
-- cd archuefi
+          $ git clone https://github.com/Exoset7/archuefi.git
 
-- chmod +x archuefi.sh
+          $ cd archuefi
 
-- ./archuefi.sh
+          $ chmod +x archuefi.sh
+
+          $ ./archuefi.sh
